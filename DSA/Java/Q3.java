@@ -1,6 +1,17 @@
 public class Q3 {
     public static int rangeBitwiseAnd(int left, int right) {
        //write your code here 
+         int shift = 0;
+        
+        // Find the common prefix by shifting left and right to the right
+        while (left < right) {
+            left >>= 1;
+            right >>= 1;
+            shift++;
+        }
+        
+        // Shift the common prefix back to the left
+        return left << shift;
     }
 
     public static void main(String[] args) {
