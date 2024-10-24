@@ -11,8 +11,18 @@ public class Q5
  {
     public static ListNode detectCycle(ListNode head) {
         //write your code here
+        ListNode slow=head;
+        ListNode fast=head;
+        while(fast!=null){
+            slow=slow.next;
+            fast=fast.next.next;
+            if(fast==slow) break;
+        }ListNode temp=head;
+        while(temp!=slow){
+            temp=temp.next;
+            slow=slow.next;
+    }return slow;
     }
-
     public static void main(String[] args) {
         ListNode head = new ListNode(3);
         head.next = new ListNode(2);
